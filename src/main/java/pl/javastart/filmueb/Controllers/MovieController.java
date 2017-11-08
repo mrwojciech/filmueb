@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pl.javastart.filmueb.model.Category;
 import pl.javastart.filmueb.model.Movie;
 import pl.javastart.filmueb.repositories.FilmRepository;
 
@@ -15,7 +16,9 @@ import java.util.List;
 public class MovieController {
 
     @Autowired
-    FilmRepository filmRepository;
+    private FilmRepository filmRepository;
+
+    private Category category;
 
     @GetMapping("/addmovieform")
     public String addMovieForm(Model model) {

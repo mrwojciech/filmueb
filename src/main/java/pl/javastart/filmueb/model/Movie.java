@@ -1,6 +1,6 @@
 package pl.javastart.filmueb.model;
 
-/**
+/*
  * @param year  to rok produkcji
  * @param photo to URL do zdjęcia
  * @param id    to id filmu, ktore powinno byc nadawane automatycznie
@@ -75,6 +75,7 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Nr: " + id + "Tytuł: " + title + " (" + year + "); opis: " + description + "; gatunek: " + category;
+        return "Film nr: " + id + " Tytuł: " + title + " (" + year + "); opis: " + description + "; gatunek: " +
+                category;
     }
 }

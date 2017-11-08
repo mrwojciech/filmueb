@@ -13,11 +13,8 @@
     Podaj rok wydania: <input type="number" th:field="*{year}"/><br/>
     Podaj link do okładki: <input type="text" th:field="*{photo}"/><br/>
     Wybierz kategorię: <select th:field="*{category}">
-    <option value="comedy">Komedia</option>
-    <option value="drama">Dramat</option>
-    <option value="horror">Horror</option>
-    <option value="thriller">Thriller</option>
-    <option value="documentary">Dokumentalny</option>
+    <option th:each="category : ${T(pl.javastart.filmueb.model.Category).values()}" th:value="${category}"
+            th:text="${category.description}"></option>
 </select>
     <input type="submit" value="Wprowadź film"/>
 </form>
