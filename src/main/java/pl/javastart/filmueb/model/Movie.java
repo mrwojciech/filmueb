@@ -1,18 +1,17 @@
-package pl.javastart.filmueb;
+package pl.javastart.filmueb.model;
 
 /**
- * @param year to rok produkcji
+ * @param year  to rok produkcji
  * @param photo to URL do zdjęcia
- * @param id to id filmu, ktore powinno byc nadawane automatycznie
- *
- * */
+ * @param id    to id filmu, ktore powinno byc nadawane automatycznie
+ */
 public class Movie {
     private String title;
     private String description;
     private String category;
     private int year;
     private String photo;
-    private Long id=0L;
+    private Long id = 0L;
 
     public Movie(String title, String description, String category, int year, String photo, Long id) {
         this.title = title;
@@ -23,7 +22,8 @@ public class Movie {
         this.id = id;
     }
 
-    public Movie (){}
+    public Movie() {
+    }
 
     public String getTitle() {
         return title;
@@ -75,6 +75,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Tytuł: " + title +" ("+ year+ "); opis:" + description + "; gatunek:"+ category;
+        return "Nr: " + id + "Tytuł: " + title + " (" + year + "); opis: " + description + "; gatunek: " + category;
     }
 }

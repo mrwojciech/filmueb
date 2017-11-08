@@ -1,7 +1,9 @@
-package pl.javastart.filmueb;
+package pl.javastart.filmueb.repositories;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import pl.javastart.filmueb.model.Movie;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.List;
 
 @Repository
 public class FilmRepository {
-    public List<Movie> movies;
+    private List<Movie> movies;
 
     @Autowired
     public FilmRepository() {
@@ -26,5 +28,8 @@ public class FilmRepository {
             if (id.equals(film.getId()))
                 result = film;
         return result;
+    }
+    public void addMovie(Movie movie){
+        movies.add(movie);
     }
 }

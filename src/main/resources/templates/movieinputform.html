@@ -10,8 +10,16 @@
 <form th:action="@{/addmovie}" method="post" th:object="${movie}">
     Podaj tytuł: <input type="text" th:field="*{title}"/><br/>
     Podaj opis filmu: <input type="text" th:field="*{description}"/><br/>
-    Podaj rok wydania: <input type="number" th:field="*{year}"><br/>
-    Podaj link do okładki: <input type="text" th:field="*{coverImage}"/><br/>
-    <input type="submit" value="Wprowadź film"/><br/>
-    <input type="reset" value="Wyczyść">
+    Podaj rok wydania: <input type="number" th:field="*{year}"/><br/>
+    Podaj link do okładki: <input type="text" th:field="*{photo}"/><br/>
+    Wybierz kategorię: <select th:field="*{category}">
+    <option value="comedy">Komedia</option>
+    <option value="drama">Dramat</option>
+    <option value="horror">Horror</option>
+    <option value="thriller">Thriller</option>
+    <option value="documentary">Dokumentalny</option>
+</select>
+    <input type="submit" value="Wprowadź film"/>
 </form>
+</body>
+</html>
