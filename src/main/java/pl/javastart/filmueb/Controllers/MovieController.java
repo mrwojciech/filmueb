@@ -1,4 +1,4 @@
-package pl.javastart.filmueb.controllers;
+package pl.javastart.filmueb.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +29,7 @@ public class MovieController {
     @PostMapping("/addmovie")
     @ResponseBody
     public String addMovie(Movie movie) {
+
         List<Movie> movieList = filmRepository.getAllFilms();
         long maxId = 0;
         for (Movie movies : movieList) {

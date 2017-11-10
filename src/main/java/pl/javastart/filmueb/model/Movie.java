@@ -1,5 +1,7 @@
 package pl.javastart.filmueb.model;
 
+import pl.javastart.filmueb.Comment;
+
 import java.util.ArrayList;
 import java.util.List;
 

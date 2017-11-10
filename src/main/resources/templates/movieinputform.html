@@ -8,14 +8,14 @@
 
 <h1>Wprowadź film:</h1>
 <form th:action="@{/addmovie}" method="post" th:object="${movie}">
-    Podaj tytuł: <input type="text" th:field="*{title}"/><br/>
-    Podaj opis filmu: <input type="text" th:field="*{description}"/><br/>
-    Podaj rok wydania: <input type="number" th:field="*{year}"/><br/>
-    Podaj link do okładki: <input type="text" th:field="*{photo}"/><br/>
-    Wybierz kategorię: <select th:field="*{category}">
+    <p>Podaj tytuł: <input type="text" th:field="*{title}"/><br/></p>
+    <p>Podaj opis filmu: <input type="text" th:field="*{description}"/><br/></p>
+    <p>Podaj rok wydania: <input type="number" th:field="*{year}"/><br/></p>
+    <p>Podaj link do okładki: <input type="text" th:field="*{photo}"/><br/></p>
+    <p>Wybierz kategorię: <select th:field="*{category}">
     <option th:each="category : ${T(pl.javastart.filmueb.model.Category).values()}" th:value="${category}"
             th:text="${category.description}"></option>
-</select>
+</select></p>
     <input type="submit" value="Wprowadź film"/>
 </form>
 </body>
