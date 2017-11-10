@@ -16,8 +16,8 @@ public class FilmRepository {
     @Autowired
     public FilmRepository() {
         movies = new ArrayList<>();
-        movies.add(new Movie("title1","desc1","komedia",2001,"url12",1L));
-        movies.add(new Movie("Avatar","jkdskf","SF",2009,"bsdkbdsksd",2L));
+        movies.add(new Movie("Avatar","jkdskf","SF",2009,"movie2.jpg",2L));
+        movies.add(new Movie("Sami Swoi","desc1","komedia",2001,"movie1.jpg",1L));
     }
 
     public List<Movie> getAllFilms(){return movies;}

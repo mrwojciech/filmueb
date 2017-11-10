@@ -4,14 +4,23 @@
     <title>Filmueb</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-<body>
+<body style="background-color: #ccb9c8">
+<div>
+    <img src="banner.png"/>
+</div>
+<h3 style="color: #5900cc">Lista filmów w bazie:</h3>
 
-<h1>Filmueb</h1>
+<p th:each="elem: ${lista}">
+    <a th:href="${'/film?id=' + elem.id}"> <img th:src="'movie'+${elem.id}+'.jpg'" style="width:130px;height:95px;" th:hspace="50"/></a>
+    <a th:text="${elem.title}"></a>
+    <a th:href="${'/film?id=' + elem.id}" th:text="${elem.title}"></a>
+<td th:text="${elem.description}"></td>
+</p>
 
-<p>Portal dopiero powstaje, zapraszamy wkrótce</p>
 <form th:action="@{/addmovieform}">
     <input type="submit" value="Dodaj film"/>
 </form>
+
 </body>
 
 </html>
