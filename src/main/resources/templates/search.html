@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Filmueb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body style="background-color: #ccb9c8">
+<div style="width: 999px; margin:auto">
+    <img src="banner.png"/>
+</div>
+<h3 style="color: #5900cc">Lista filmów w bazie:</h3>
+
+
+<p th:each="elem: ${lista}">
+<table style="width: 1000px"   class="fixed">
+    <col width="200px" />
+    <col width="200px" align="left" />
+    <col width="600px" />
+
+    <tr >
+        <th >
+         <a  style="width: 100px; " th:href="${'/film?id=' + elem.id}">
+          <img th:src="'movie'+${elem.id}+'.jpg'" style="width:100px;height:95px;" th:hspace="50"/></a>
+        </th>
+        <th>
+            <a  th:href="${'/film?id=' + elem.id}" th:text="${elem.title}"> </a>
+        </th>
+        <th>
+            <a th:text="${elem.description}"></a>
+        </th>
+    </tr>
+</table>
+
+
+<!--<a th:text="${elem.title}"></a>-->
+</p>
+
+<form th:action="@{/addmovieform}">
+    <input type="submit" value="Dodaj film"/>
+</form>
+
+</body>
+
+</html>
