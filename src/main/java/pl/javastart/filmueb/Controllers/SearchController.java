@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pl.javastart.filmueb.model.Movie;
@@ -20,11 +21,17 @@ public class SearchController {
 
 
 
+    @GetMapping("/searchHome")
+    public String  searchHome(Model model){
+        model.addAttribute("movie", new Movie());
+        return "searchHome";
+    }
 
-    @GetMapping("/search")
-public String searchByName(@RequestParam String name,  Model model)
+
+    @PostMapping("/search")
+public String searchByName(Movie movie,  Model model)
     {
-        List<Movie> movies = filmRepository.findByName(name);
+        List<Movie> movies = filmRepository.findByName(movie.getTitle());
 
         model.addAttribute("lista", movies);
         return "search";
